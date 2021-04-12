@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+
+{% block style1 %}
+    
+.card-deck{
+  margin-top: 85px;
+  padding-left: 400px;
+  padding-right: 400px;
+  
+}
+
+
+
+.cardlink::after {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 1;
+pointer-events: auto;
+content: "";
+}
+
+.card-img-top{
+width:100%;
+height:auto;
+}
+.card-body{
+background-color: white;
+
+{% endblock style1 %}
+
+
+
+{% block extra_body %}
+
+<h1 style="margin-left: auto; margin-right: auto; width:25%; height: 30px" class="text-light"> 
+Neural Networks
+</h1>
+
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="{{url_for('static',filename='images/ANN.png')}}" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Artificial Neural Networks</h5>
+      <p class="card-text">Train your small data using traditional Neural Networks</p>
+      <a href="#" class="cardlink"></a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="{{url_for('static',filename='images/CNN.png')}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Convolutional Neural Networks</h5>
+      <p class="card-text"> Train your Large data using CNN </p>
+      <a href="#" class="cardlink"></a>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+{% endblock extra_body %}

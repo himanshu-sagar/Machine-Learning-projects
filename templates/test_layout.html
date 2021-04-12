@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block style1 %}
+    .data{
+      width: 400px;
+      height: 250px;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+{% endblock style1 %}
+
+
+
+
+{% block extra_body %}
+
+  <div class="data text-light">
+    <form action="/train_classification",method="POST">
+      <div style="padding: 20px;">
+        <label for="dataset">Dataset</label>
+        <select class="form-control" id="dataset" name="dataset">
+          <option value="iris" >Iris</option>
+          <option value="parkinsons" selected>Parkinsons</option>
+      </div>
+        </select>
+        <br>
+      <div>
+        <label for="algo">Algorithm</label>
+        <select class="form-control" id="algo" name="algo">
+          <option value="DecisionTreeClassifier"  selected>DecisionTreeClassifier</option>
+          <option value="Neural Networks">Neural Networks</option>
+          <option value="SVM">SVM</option>
+        </select>
+
+      </div>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+{% endblock extra_body %}
+

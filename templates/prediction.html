@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+
+{% block style1 %}
+    
+.card{
+  width: 500px;
+  height: auto;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.head1{
+  margin-left: auto;
+  margin-right: auto;
+  width:60%;
+  height: 30px;
+}
+
+
+
+{% endblock style1 %}
+
+{% block extra_body %}
+<div class="head1 text-light">
+<h1 style="margin-left: auto; margin-right: auto;">
+  Classification Of {{ dataset_name }} dataset Using {{ algo }}
+</h1>
+</div>
+
+<div class="card data bg-light text-dark mb-3">
+  <div class="card-header"><h5 class="card-title">Prediction</h5></div>
+  <div class="card-body">
+    <p class="card-text">Enter Row number from the dataset for predicting the output [Between 0 and : {{ m }}]</p>
+    <form action="/prediction" method="POST">
+      <div class="form-group">
+        <label for="row"> ROW NUMBER </label>
+        <input class="form-control" type="number" placeholder="10" name="row">
+      </div>
+      <button type="submit" class="btn btn-primary" value="submit_prediction" name="form_prediction" onclick="predict_id()">Predict</button>
+    </form>
+    
+    <div>
+      <h4> {{ actual_header }} </h4><br>
+      <h6> {{ actual }} </h6>
+      <br>
+      <h4>{{ predict_header }}</h4><br>
+      <h6>
+        {{ prediction }}
+      </h6>
+
+      {{ d }}
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock extra_body %}
